@@ -3,6 +3,20 @@ import { v4 } from "uuid";
 import mailnesia from "mailnesia";
 import * as cheerio from "cheerio";
 
+enum Err {
+  SUB = "Couldn't find sign up button",
+  ESB = "Couldn't find email submit button",
+  PASB = "Couldn't find password and age submit button",
+  FCE = "Couldn't fetch confirmation email",
+  PCC = "Couldn't parse confirmation code",
+  MVCE = "Couldn't find mozilla verification code email",
+  CCSB = "Couldn't find confirmation code submit button",
+  SB = "Couldn't find skip button",
+  GMB = "Couldn't find generate mask button",
+  MC = "Couldn't locate new mask container",
+  RM = "Couldn't retrieve mask",
+}
+
 function sleep(ms: number) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
@@ -39,7 +53,7 @@ async function navigateToSignUpPage(fxrLandingPage: Page) {
   );
 
   if (!signUpButton) {
-    throw new Error("Couldn't find sign up button");
+    throw new Error(Err.SUB);
   }
 
   signUpButton.click();
@@ -52,7 +66,7 @@ async function submitEmail(fxrEmailPage: Page, email: string) {
   );
 
   if (!signUpButton) {
-    throw new Error("Couldn't find email submit button");
+    throw new Error(Err.ESB);
   }
 
   signUpButton.click();
@@ -69,7 +83,7 @@ async function submitPasswordAndAge(
   const submitButton = await fxrPasswordAgePage.waitForSelector("#submit-btn");
 
   if (!submitButton) {
-    throw new Error("Couldn't find password and age submit button");
+    throw new Error(Err.PASB);
   }
 
   submitButton.click();
@@ -103,7 +117,7 @@ async function getConfirmationCode(mailbox: string) {
     const codeEmail = await mailnesia.getMessage(mailbox, codeEmailId);
 
     if (!codeEmail) {
-      throw new Error("Couldn't fetch verification email");
+      throw new Error(Err.FCE);
     }
 
     const $ = cheerio.load(codeEmail.text);
@@ -111,7 +125,7 @@ async function getConfirmationCode(mailbox: string) {
     const codeRegex = text.match(/\d{6}/g);
 
     if (!codeRegex) {
-      throw new Error("Couldn't parse code");
+      throw new Error(Err.PCC);
     }
 
     const code = codeRegex[0];
@@ -119,7 +133,7 @@ async function getConfirmationCode(mailbox: string) {
     return code;
   }
 
-  throw new Error("Couldn't find mozilla verification code email");
+  throw new Error(Err.MVCE);
 }
 
 async function submitConfirmationCode(
@@ -132,7 +146,7 @@ async function submitConfirmationCode(
   );
 
   if (!submitButton) {
-    throw new Error("Couldn't find confirmation code submit button");
+    throw new Error(Err.CCSB);
   }
 
   submitButton.click();
@@ -144,7 +158,7 @@ async function generateMask(fxrNewAccountPage: Page) {
   );
 
   if (!skipButton) {
-    throw new Error("Couldn't find skip button");
+    throw new Error(Err.SB);
   }
 
   skipButton.click();
@@ -154,7 +168,7 @@ async function generateMask(fxrNewAccountPage: Page) {
   );
 
   if (!maskButton) {
-    throw new Error("Couldn't find generate mask button");
+    throw new Error(Err.GMB);
   }
 
   maskButton.click();
@@ -166,13 +180,13 @@ async function getMask(fxrNewAccountPage: Page) {
   );
 
   if (!emailButton) {
-    throw new Error("Couldn't locate new mask container");
+    throw new Error(Err.MC);
   }
 
   const mask = await emailButton.evaluate((e) => e.textContent);
 
   if (!mask) {
-    throw new Error("Couldn't retrieve mask");
+    throw new Error(Err.RM);
   }
 
   return mask;
@@ -220,6 +234,7 @@ async function createFxRelayMask(config?: {
 
 const fxrgen = {
   createFxRelayMask,
+  Err,
 };
 
 export default fxrgen;
