@@ -1,5 +1,5 @@
 {
-  "name": "fx-relay-mask-generator",
+  "name": "fx-relay-mask-creator",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -28,12 +28,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aslkeaxn/fx-relay-mask-generator.git"
+    "url": "git+https://github.com/aslkeaxn/fx-relay-mask-creator.git"
   },
   "bugs": {
-    "url": "https://github.com/aslkeaxn/fx-relay-mask-generator/issues"
+    "url": "https://github.com/aslkeaxn/fx-relay-mask-creator/issues"
   },
-  "homepage": "https://github.com/aslkeaxn/fx-relay-mask-generator",
+  "homepage": "https://github.com/aslkeaxn/fx-relay-mask-creator",
   "files": [
     "dist"
   ]

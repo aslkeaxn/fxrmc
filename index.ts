@@ -232,9 +232,9 @@ async function createFxRelayMask(config?: {
   return { mailbox, email, password, mask };
 }
 
-const fxrgen = {
+const fxrmc = {
   createFxRelayMask,
   Err,
 };
 
-export default fxrgen;
+export default fxrmc;
