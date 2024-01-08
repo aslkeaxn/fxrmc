@@ -2,13 +2,19 @@
   "name": "fx-relay-mask-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "mozilla",
+    "relay",
+    "firefox",
+    "mask",
+    "email"
+  ],
+  "author": "aslkeaxn",
+  "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "mailnesia": "^1.0.1",
@@ -19,5 +25,16 @@
     "@types/uuid": "^9.0.7",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aslkeaxn/fx-relay-mask-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aslkeaxn/fx-relay-mask-generator/issues"
+  },
+  "homepage": "https://github.com/aslkeaxn/fx-relay-mask-generator",
+  "files": [
+    "dist"
+  ]
 }
