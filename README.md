@@ -31,13 +31,3 @@ function createFxRelayMask(config?: {
     mask: string;
 }>;
 ```
-
-## Usage
-
-```javascript
-import fxrgen from "fxrgen";
-
-fxrgen.createFxRelayMask().then(({ mailbox, email, password, mask }) => {
-  // ...
-});
-```
