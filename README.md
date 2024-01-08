@@ -4,12 +4,6 @@ This library allows the automatic generation of mozilla relay masks given a Mail
 
 To programmatically query the returned Mailnesia mailbox, you can use my [mailnesia](https://www.npmjs.com/package/mailnesia) library.
 
-## Installation
-
-```
-npm install fxrgen
-```
-
 ## Type Definitions
 
 ```javascript
