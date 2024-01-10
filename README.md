@@ -1,8 +1,6 @@
 ## Description
 
-This library allows the automatic generation of mozilla relay masks given a Mailnesia mailbox.
-
-To programmatically query the returned Mailnesia mailbox, you can use my [mailnesia](https://www.npmjs.com/package/mailnesia) library.
+This library allows the automatic creation of mozilla relay masks given a Mailnesia mailbox, or both a mailnesia email and an associated mask if the latter is not provided. To programmatically query the returned Mailnesia mailbox, you can use my [mailnesia](https://www.npmjs.com/package/mailnesia) library.
 
 ## Type Definitions
 
