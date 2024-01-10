@@ -1,7 +1,7 @@
 {
-  "name": "fx-relay-mask-creator",
+  "name": "fxrmc",
   "version": "1.0.0",
-  "description": "",
+  "description": "A library to automatically create firefox relay masks using mailnesia emails",
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc"
@@ -36,5 +36,6 @@
   "homepage": "https://github.com/aslkeaxn/fx-relay-mask-creator",
   "files": [
     "dist"
-  ]
+  ],
+  "types": "./dist/index.d.ts"
 }
