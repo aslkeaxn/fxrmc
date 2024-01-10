@@ -1,6 +1,6 @@
 {
   "name": "fxrmc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A library to automatically create firefox relay masks using mailnesia emails",
   "main": "./dist/index.js",
   "scripts": {
