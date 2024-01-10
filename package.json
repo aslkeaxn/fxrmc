@@ -17,7 +17,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
-    "mailnesia": "^1.0.1",
+    "mailnesia-api": "^1.0.0",
     "puppeteer": "^21.7.0",
     "uuid": "^9.0.1"
   },

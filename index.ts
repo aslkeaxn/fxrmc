@@ -1,6 +1,6 @@
 import puppeteer, { Browser, Page } from "puppeteer";
 import { v4 } from "uuid";
-import mailnesia from "mailnesia";
+import mailnesia from "mailnesia-api";
 import * as cheerio from "cheerio";
 
 enum Err {
