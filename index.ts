@@ -85,6 +85,9 @@ async function fxrmc(
   const mask = await samp.evaluate((s) => s.textContent);
   if (!mask) throw new Error("Couldn't extract mask");
 
+  await page.close();
+  await browser.close();
+
   return mask;
 }
 
