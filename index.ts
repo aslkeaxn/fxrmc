@@ -34,6 +34,4 @@ async function fxrmc(
   return mask;
 }
 
-export { Err };
-
-export default fxrmc;
+export default { fxrmc, Err };
