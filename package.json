@@ -1,11 +1,11 @@
 {
   "name": "fxrmc",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A library to automatically create firefox relay masks",
   "main": "./dist/index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node ./index.ts"
+    "dev": "nodemon ./index.ts"
   },
   "keywords": [
     "mozilla",
@@ -17,10 +17,11 @@
   "author": "aslkeaxn",
   "license": "MIT",
   "dependencies": {
+    "osecmail": "^1.0.3",
     "puppeteer": "^21.7.0"
   },
   "devDependencies": {
-    "osecmail": "^1.0.2",
+    "nodemon": "^3.0.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },

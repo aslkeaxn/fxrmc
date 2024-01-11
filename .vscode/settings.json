@@ -3,6 +3,7 @@
     "fxrgen",
     "fxrmc",
     "mailnesia",
-    "mozmail"
+    "mozmail",
+    "osecmail"
   ]
 }
