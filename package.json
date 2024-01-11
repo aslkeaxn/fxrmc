@@ -1,10 +1,11 @@
 {
   "name": "fxrmc",
-  "version": "1.0.3",
-  "description": "A library to automatically create firefox relay masks using mailnesia emails",
+  "version": "1.0.4",
+  "description": "A library to automatically create firefox relay masks",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "ts-node ./index.ts"
   },
   "keywords": [
     "mozilla",
@@ -16,26 +17,23 @@
   "author": "aslkeaxn",
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "mailnesia-api": "^1.0.0",
-    "puppeteer": "^21.7.0",
-    "uuid": "^9.0.1"
+    "puppeteer": "^21.7.0"
   },
   "devDependencies": {
-    "@types/uuid": "^9.0.7",
+    "osecmail": "^1.0.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aslkeaxn/fx-relay-mask-creator.git"
+    "url": "git+https://github.com/aslkeaxn/fxrmc.git"
   },
   "bugs": {
-    "url": "https://github.com/aslkeaxn/fx-relay-mask-creator/issues"
+    "url": "https://github.com/aslkeaxn/fxrmc/issues"
   },
-  "homepage": "https://github.com/aslkeaxn/fx-relay-mask-creator",
+  "homepage": "https://github.com/aslkeaxn/fxrmc",
   "files": [
-    "dist"
+    "./dist"
   ],
   "types": "./dist/index.d.ts"
 }

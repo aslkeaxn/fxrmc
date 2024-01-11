@@ -1,19 +1,10 @@
-## Type Definitions
-
-```typescript
-function fxrmc(
-  mailbox: Mailbox,
-  password: string,
-  headless: false | "new"
-): Promise<string>;
-
-interface Mailbox {
+export interface Mailbox {
   mailbox: string;
   countFirefoxMessages: (firefoxDomain: string) => Promise<number>;
   getLatestFirefoxMessageText: (firefoxDomain: string) => Promise<string>;
 }
 
-enum Err {
+export enum Err {
   createAccount1 = "Couldn't find sign up button",
   createAccount2 = "Couldn't find sign up or sign in button",
   createAccount3 = "Couldn't find create account button",
@@ -25,4 +16,3 @@ enum Err {
   generateMasks2 = "Couldn't find mask button",
   generateMasks3 = "Couldn't extract mask",
 }
-```
