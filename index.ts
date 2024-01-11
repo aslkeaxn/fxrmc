@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-import { Err, Mailbox } from "./types";
+import { Mailbox } from "./types";
 import { createAccount } from "./src/create-account";
 import { getConfirmationCode } from "./src/get-confirmation-code";
 import { verifyAccount } from "./src/verify-account";
@@ -34,4 +34,4 @@ async function fxrmc(
   return mask;
 }
 
-export default { fxrmc, Err };
+export default fxrmc;
