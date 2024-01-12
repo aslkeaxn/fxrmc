@@ -6,7 +6,7 @@ function sleep(ms: number) {
 }
 
 async function fxrmc(
-  email: string,
+  osecmailEmail: string,
   password: string,
   headless: false | "new" = "new"
 ) {
@@ -20,7 +20,7 @@ async function fxrmc(
   if (!suButton) throw new Error("Couldn't find sign up button");
   await suButton.click();
 
-  await page.locator("input").fill(email);
+  await page.locator("input").fill(osecmailEmail);
 
   const suSiButton = await page.waitForSelector("#submit-btn");
   if (!suSiButton) throw new Error("Couldn't find sign up or sign in button");
@@ -35,7 +35,7 @@ async function fxrmc(
   if (!caButton) throw new Error("Couldn't find create account button");
   await caButton.click();
 
-  const [login, domain] = email.split("@");
+  const [login, domain] = osecmailEmail.split("@");
 
   const messages = await osecmail.getMessages(login, domain);
   const originalCount = messages.filter((m) =>
