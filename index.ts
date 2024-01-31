@@ -1,4 +1,4 @@
-import puppeteer from "puppeteer";
+import puppeteer, { PuppeteerLaunchOptions } from "puppeteer";
 import osecmail from "osecmail";
 
 function sleep(ms: number) {
@@ -8,9 +8,9 @@ function sleep(ms: number) {
 async function fxrmc(
   osecmailEmail: string,
   password: string,
-  headless: false | "new" = "new"
+  options: PuppeteerLaunchOptions = { headless: "new" }
 ) {
-  const browser = await puppeteer.launch({ headless });
+  const browser = await puppeteer.launch(options);
   const pages = await browser.pages();
   const page = pages[0];
 
