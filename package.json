@@ -1,6 +1,6 @@
 {
   "name": "fxrmc",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "A library to automatically create firefox relay masks",
   "main": "./dist/index.js",
   "scripts": {
